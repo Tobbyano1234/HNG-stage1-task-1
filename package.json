@@ -6,7 +6,8 @@
   "author": "tobbyano1234 <adegbesan86@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon ./src/server.js"
+    "dev": "nodemon ./src/server.js",
+    "start": "nodemon ./src/server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
