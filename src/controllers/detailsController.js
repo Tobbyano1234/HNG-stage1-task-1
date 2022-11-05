@@ -28,6 +28,57 @@ const getDetails = async (req, res, next) => {
   }
 };
 
+const createOperation = async (req, res, next) => {
+  try {
+    const { x, y, operation_type } = req.body;
+    // const operation_type = { "addition", "subtraction", "multiplication"};
+
+    // const minus = (x, y) => {
+    //   return x - y;
+    // };
+    // const multiply = (x, y) => {
+    //   const result = x * y;
+    //   return result;
+    // };
+
+    if (operation_type === "addition") {
+      // const add = (x, y) => {
+      // return x + y;
+      const result = parseInt(x) + parseInt(y);
+      return res.status(httpStatus.OK).json({
+        message: "Operation performed successfully",
+        slackUsername: "Tobbyano1234",
+        result,
+        operation_type,
+      });
+    }
+    if (operation_type === "subtraction") {
+      const result = parseInt(x) - parseInt(y);
+      return res.status(httpStatus.OK).json({
+        message: "Operation performed successfully",
+        slackUsername: "Tobbyano1234",
+        result,
+        operation_type,
+      });
+    }
+    if (operation_type === "multiplication") {
+      const result = parseInt(x) * parseInt(y);
+      return res.status(httpStatus.OK).json({
+        message: "Operation performed successfully",
+        slackUsername: "Tobbyano1234",
+        result,
+        operation_type,
+      });
+    }
+
+    // { “slackUsername”: String, "operation_type" : Enum. value, “result”: Integer }
+  } catch (error) {
+    console.log(error);
+    serverError(res);
+  }
+};
+
 module.exports = {
   getDetails,
+  createOperation,
 };
