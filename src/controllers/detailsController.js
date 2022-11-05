@@ -31,19 +31,13 @@ const getDetails = async (req, res, next) => {
 const createOperation = async (req, res, next) => {
   try {
     const { x, y, operation_type } = req.body;
-    // const operation_type = { "addition", "subtraction", "multiplication"};
+    const enumType = {
+      add: "addition",
+      minus: "subtraction",
+      multiply: "multiplication",
+    };
 
-    // const minus = (x, y) => {
-    //   return x - y;
-    // };
-    // const multiply = (x, y) => {
-    //   const result = x * y;
-    //   return result;
-    // };
-
-    if (operation_type === "addition") {
-      // const add = (x, y) => {
-      // return x + y;
+    if (operation_type === enumType.add) {
       const result = parseInt(x) + parseInt(y);
       return res.status(httpStatus.OK).json({
         message: "Operation performed successfully",
@@ -52,7 +46,7 @@ const createOperation = async (req, res, next) => {
         operation_type,
       });
     }
-    if (operation_type === "subtraction") {
+    if (operation_type === enumType.minus) {
       const result = parseInt(x) - parseInt(y);
       return res.status(httpStatus.OK).json({
         message: "Operation performed successfully",
@@ -61,7 +55,7 @@ const createOperation = async (req, res, next) => {
         operation_type,
       });
     }
-    if (operation_type === "multiplication") {
+    if (operation_type === enumType.multiply) {
       const result = parseInt(x) * parseInt(y);
       return res.status(httpStatus.OK).json({
         message: "Operation performed successfully",
