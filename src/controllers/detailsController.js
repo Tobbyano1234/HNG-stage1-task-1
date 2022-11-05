@@ -40,7 +40,7 @@ const createOperation = async (req, res, next) => {
     if (operation_type === enumType.add) {
       const result = parseInt(x) + parseInt(y);
       return res.status(httpStatus.OK).json({
-        message: "Operation performed successfully",
+        // message: "Operation performed successfully",
         slackUsername: "Tobbyano1234",
         result,
         operation_type,
@@ -49,7 +49,7 @@ const createOperation = async (req, res, next) => {
     if (operation_type === enumType.minus) {
       const result = parseInt(x) - parseInt(y);
       return res.status(httpStatus.OK).json({
-        message: "Operation performed successfully",
+        // message: "Operation performed successfully",
         slackUsername: "Tobbyano1234",
         result,
         operation_type,
@@ -58,7 +58,7 @@ const createOperation = async (req, res, next) => {
     if (operation_type === enumType.multiply) {
       const result = parseInt(x) * parseInt(y);
       return res.status(httpStatus.OK).json({
-        message: "Operation performed successfully",
+        // message: "Operation performed successfully",
         slackUsername: "Tobbyano1234",
         result,
         operation_type,
